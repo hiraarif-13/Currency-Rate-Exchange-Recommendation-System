@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System">
-    <img src="images/logo.png" alt="Logo" width="300" height="300">
+    <img src="Images/logo.png" alt="Logo" width="300" height="300">
   </a>
 
 <h2 align="center">Currency Exchange Rate Recommendation System</h3>
@@ -51,11 +51,11 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
-</details>
+
+
 
 <!-- ABOUT THE PROJECT -->
 
@@ -68,7 +68,13 @@
 The Currency Exchange Rate Prediction System is a Python application designed to assist users in analyzing historical
 currency exchange rates. It predicts future rates and makes recommendations on buying or selling currencies.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">
+  <a href="#readme-top" style="color: gray; text-decoration: none; transition: color 0.2s;"
+    onmouseover="this.style.color='white';" onmouseout="this.style.color='gray';">
+    <strong>Back to Top ⬆️</strong>
+  </a>
+</p>
+
 
 <a id="built-with"></a>
 
@@ -90,7 +96,9 @@ libraries in Python. Here's a list of the main components:
 * [![SciPy][SciPy.org]][SciPy-url]
 * [![Colab][Collab-shield]][Collab-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">
+  <a href="#readme-top"><strong>Back to Top ⬆️</strong></a>
+</p>
 
 <a id="getting-started"></a>
 
@@ -260,8 +268,7 @@ volume and a box plot to visualize the distribution of data.
 
 | Candle Stick Chart | Boxplot | Seasonality Trend |
 |--------------------|---------|-------------------|
-| [![Candle Stick Chart][candle-stick-chart-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Resources/candle_stick_chart.html) | [![Boxplot][boxplot-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/Before/boxplot.png) | [![Seasonality Trend][seasonality-trend-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/Before/seasonality_trend.png) |
-
+| [![Candle Stick Chart][candle-stick-chart-screenshot-before]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Resources/candle_stick_chart.html) | [![Boxplot][boxplot-screenshot-before]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/Before/boxplot.png) | [![Seasonality Trend][seasonality-trend-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/Before/seasonality_trend.png) |
 
 This module also removes columns that do not contribute any information about variability or spread in the data
 e.g., `Volume`
@@ -280,12 +287,22 @@ Simple Moving Average (SMA) and Relative Strength Index (RSI), which are widely 
 1. Skewness of the features is assessed
 2. Outlier handling is performed through Interquartile Range (IQR) capping.
 
-### Feature Selection
+[![Boxplot][boxplot-screenshot-after]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/boxplot.png)
+
+#### Feature Selection
 
 Features are then selected based on their:
 
 1. Correlation with the target variable.
 2. Recursive Feature Elimination (RFE) using a Random Forest Regressor.
+
+#### Visualization
+
+[![Visualise][visualization-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/visualization.png)
+
+#### Decision on Which Features to Keep
+
+Based on both the feature selection methods, `n` features will be selected.
 
 ### Model Training and Evaluation
 
@@ -298,22 +315,47 @@ Several models are trained and evaluated:
 
 The best model is selected based on Mean Squared Error (MSE) and R-squared (R2) metrics.
 
+[![Model Training and Evaluation][model_training_evaluation-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/model_training_evaluation.png)
+
 ### Recommendation Engine
 
 A function is designed to recommend whether to buy or sell based on the predictions of the best model and the current
 price.
 
+```python
+# Decision recommendation based on the best model's predictions
+def recommend_decision(predictions, current_price):
+    future_price = np.mean(predictions)
+    if future_price > current_price:
+        return "Buy"
+    else:
+        return "Sell"
+
+
+current_price = df['Close'].iloc[-1]
+best_model = models[best_model_name]
+future_predictions = best_model.predict(X_test)
+decision = recommend_decision(future_predictions, current_price)
+print(f"Recommended action: {decision} it now!")
+```
+
+```commandline
+Recommended action: Sell it now!
+```
+
 ### Forecasting
 
 The system can forecast the exchange rate for a specified number of future days using the best-performing model.
 
-### Visualization
+[![Forecasting][forecasting-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Resources/demo.html)
 
-Interactive visualizations are created using Plotly to display predicted and actual values, and trends over time.
+<a id="contributing"></a>
 
 ## Contributing
 
 Feel free to fork the project, make changes, and submit a pull request.
+
+<a id="acknowledgments"></a>
 
 ## Acknowledgments
 
@@ -397,8 +439,16 @@ Feel free to fork the project, make changes, and submit a pull request.
 
 [Collab-shield]: https://colab.research.google.com/assets/colab-badge.svg
 
-[candle-stick-chart-screenshot]: Images/Before/candle_stick_chart.png
+[candle-stick-chart-screenshot-before]: Images/Before/candle_stick_chart.png
 
-[boxplot-screenshot]: Images/Before/boxplot.png
+[boxplot-screenshot-before]: Images/Before/boxplot.png
+
+[boxplot-screenshot-after]: Images/After/boxplot.png
 
 [seasonality-trend-screenshot]: Images/Before/seasonality_trend.png
+
+[visualization-screenshot]: Images/After/visualization.png
+
+[model_training_evaluation-screenshot]: Images/After/model_training_evaluation.png
+
+[forecasting-screenshot]: Images/After/candle_stick_chart.png
