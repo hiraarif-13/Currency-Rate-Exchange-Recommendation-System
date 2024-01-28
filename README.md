@@ -69,12 +69,8 @@ The Currency Exchange Rate Prediction System is a Python application designed to
 currency exchange rates. It predicts future rates and makes recommendations on buying or selling currencies.
 
 <p align="right">
-  <a href="#readme-top" style="color: gray; text-decoration: none; transition: color 0.2s;"
-    onmouseover="this.style.color='white';" onmouseout="this.style.color='gray';">
-    <strong>Back to Top ⬆️</strong>
-  </a>
+  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
 </p>
-
 
 <a id="built-with"></a>
 
@@ -97,7 +93,7 @@ libraries in Python. Here's a list of the main components:
 * [![Colab][Collab-shield]][Collab-url]
 
 <p align="right">
-  <a href="#readme-top"><strong>Back to Top ⬆️</strong></a>
+  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
 </p>
 
 <a id="getting-started"></a>
@@ -141,6 +137,10 @@ Exchange Rate Recommendation System.
    python setup.py install
    ```
 
+<p align="right">
+  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
+</p>
+
 <a id="project-structure"></a>
 
 ## Project Structure
@@ -148,6 +148,10 @@ Exchange Rate Recommendation System.
 - `Currency Exchange Recommendation System.ipynb`: Notebook with all the analysis and prediction code.
 - `setup.py`: Script to set up the project dependencies.
 - `requirements.txt`: List of libraries required for the project.
+
+<p align="right">
+  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
+</p>
 
 <a id="usage"></a>
 
@@ -349,6 +353,10 @@ The system can forecast the exchange rate for a specified number of future days 
 
 [![Forecasting][forecasting-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Resources/demo.html)
 
+<p align="right">
+  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
+</p>
+
 <a id="contributing"></a>
 
 ## Contributing
@@ -385,7 +393,7 @@ Feel free to fork the project, make changes, and submit a pull request.
 
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 
-[product-screenshot]: Resources/demo.html
+[product-screenshot]: demo.html
 
 [Python.org]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 
