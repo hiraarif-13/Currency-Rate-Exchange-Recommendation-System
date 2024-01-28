@@ -4,6 +4,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![Upwork][Upwork-badge]][Upwork-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -80,7 +81,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Resources/demo.html)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/demo.gif)
 
 The Currency Exchange Rate Prediction System is a Python application designed to assist users in analyzing historical
 currency exchange rates. It predicts future rates and makes recommendations on buying or selling currencies.
@@ -147,7 +148,7 @@ Exchange Rate Recommendation System.
 3. Run `setup.py` to install necessary libraries listed in `requirements.txt`.
 
    ```bash
-   python setup.py install
+   python setup.py
    ```
 
 <p align="right"><a href="#readme-top"><strong>Back to Top ⬆️</strong></a></p>
@@ -384,7 +385,7 @@ Recommended action: Sell it now!
 
 The system can forecast the exchange rate for a specified number of future days using the best-performing model.
 
-[![Forecasting][forecasting-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Resources/demo.html)
+[![Forecasting][forecasting-screenshot]](https://hiraarif-13.github.io/Currency-Rate-Exchange-Recommendation-System/Resources/demo.html)
 
 <p align="right"><a href="#readme-top"><strong>Back to Top ⬆️</strong></a></p>
 
@@ -398,9 +399,9 @@ Feel free to fork the project, make changes, and submit a pull request.
 
 ## Contact
 
+* [![Upwork][Upwork-badge]][Upwork-url]
 * [![LinkedIn][LinkedIn-badge]][LinkedIn-url]
 * [![Gmail][Gmail-badge]][Gmail-url]
-* [![Upwork][Upwork-badge]][Upwork-url]
 
 <a id="acknowledgments"></a>
 
@@ -434,7 +435,7 @@ Feel free to fork the project, make changes, and submit a pull request.
 
 [linkedin-url]: https://www.linkedin.com/in/hira-arif-31a45620b/
 
-[product-screenshot]: demo.html
+[product-screenshot]: Images/After/demo.gif
 
 [Python.org]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 
