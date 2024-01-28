@@ -5,7 +5,6 @@
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -48,13 +47,31 @@
       </ul>
     </li>
     <li><a href="#project-structure">Project Structure</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li>
+        <a href="#usage">Usage</a>
+        <ol>
+            <li><a href="#importing-libraries">Importing Libraries</a></li>
+            <li><a href="#data-loading">Data Loading</a></li>
+            <li><a href="#data-preprocessing">Data Preprocessing</a></li>
+            <li><a href="#eda">Exploratory Data Analysis (EDA)</a></li>
+            <li>
+                <a href="#feature-engineering">Feature Engineering</a>
+                <ol>
+                    <li><a href="#data-normalization">Data Normalization</a></li>
+                    <li><a href="#feature-selection">Feature Selection</a></li>
+                    <li><a href="#decision">Decision on Which Features to Keep</a></li>
+                </ol>
+            </li>
+            <li><a href="#model-training-evaluation">Model Training and Evaluation</a></li>
+            <li><a href="#recommendation-engine">Recommendation Engine</a></li>
+            <li><a href="#forecasting">Forecasting</a></li>
+        </ol>
+    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
-
+</details>
 
 
 <!-- ABOUT THE PROJECT -->
@@ -68,9 +85,7 @@
 The Currency Exchange Rate Prediction System is a Python application designed to assist users in analyzing historical
 currency exchange rates. It predicts future rates and makes recommendations on buying or selling currencies.
 
-<p align="right">
-  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
-</p>
+<p align="right"><a href="#readme-top"><strong>Back to Top ⬆️</strong></a></p>
 
 <a id="built-with"></a>
 
@@ -92,9 +107,7 @@ libraries in Python. Here's a list of the main components:
 * [![SciPy][SciPy.org]][SciPy-url]
 * [![Colab][Collab-shield]][Collab-url]
 
-<p align="right">
-  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
-</p>
+<p align="right"><a href="#readme-top"><strong>Back to Top ⬆️</strong></a></p>
 
 <a id="getting-started"></a>
 
@@ -137,9 +150,7 @@ Exchange Rate Recommendation System.
    python setup.py install
    ```
 
-<p align="right">
-  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
-</p>
+<p align="right"><a href="#readme-top"><strong>Back to Top ⬆️</strong></a></p>
 
 <a id="project-structure"></a>
 
@@ -149,13 +160,13 @@ Exchange Rate Recommendation System.
 - `setup.py`: Script to set up the project dependencies.
 - `requirements.txt`: List of libraries required for the project.
 
-<p align="right">
-  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
-</p>
+<p align="right"><a href="#readme-top"><strong>Back to Top ⬆️</strong></a></p>
 
 <a id="usage"></a>
 
 ## Usage
+
+<a id="importing-libraries"></a>
 
 ### Importing Libraries
 
@@ -170,6 +181,8 @@ The system utilizes a variety of Python libraries:
 - `statsmodels` for the implementation of many statistical models.
 - `yfinance` for fetching historical market data.
 - `warnings` to suppress warnings for cleaner output.
+
+<a id="data-loading"></a>
 
 ### Data Loading
 
@@ -252,6 +265,8 @@ df = pd.read_csv(csv_file_path)
 By altering these variables, you can tailor the data loading process to fetch and prepare the specific currency exchange
 rate data that you are interested in analyzing with the system.
 
+<a id="data-preprocessing"></a>
+
 ### Data Preprocessing
 
 This step includes handling missing values, converting date strings to datetime objects, and filling any remaining
@@ -265,6 +280,8 @@ df.fillna(method='ffill', inplace=True)
 df['Date'] = pd.to_datetime(df['Date'])
 ```
 
+<a id="eda"></a>
+
 ### Exploratory Data Analysis (EDA)
 
 EDA is performed to understand data distributions and relationships. This includes generating a candlestick chart with
@@ -272,7 +289,7 @@ volume and a box plot to visualize the distribution of data.
 
 | Candle Stick Chart | Boxplot | Seasonality Trend |
 |--------------------|---------|-------------------|
-| [![Candle Stick Chart][candle-stick-chart-screenshot-before]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Resources/candle_stick_chart.html) | [![Boxplot][boxplot-screenshot-before]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/Before/boxplot.png) | [![Seasonality Trend][seasonality-trend-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/Before/seasonality_trend.png) |
+| [![Candle Stick Chart][candle-stick-chart-screenshot-before]](https://hiraarif-13.github.io/Currency-Rate-Exchange-Recommendation-System/Resources/candle_stick_chart.html) | [![Boxplot][boxplot-screenshot-before]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/Before/boxplot.png) | [![Seasonality Trend][seasonality-trend-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/Before/seasonality_trend.png) |
 
 This module also removes columns that do not contribute any information about variability or spread in the data
 e.g., `Volume`
@@ -281,17 +298,23 @@ e.g., `Volume`
 df.drop(columns=['Volume'], inplace=True)
 ```
 
+<a id="feature-engineering"></a>
+
 ### Feature Engineering
 
 The system creates new features like lag features (to capture temporal dependencies) and technical indicators such as
 Simple Moving Average (SMA) and Relative Strength Index (RSI), which are widely used in technical analysis.
 
-#### Data Normalization:
+<a id="data-normalization"></a>
+
+#### Data Normalization
 
 1. Skewness of the features is assessed
 2. Outlier handling is performed through Interquartile Range (IQR) capping.
 
 [![Boxplot][boxplot-screenshot-after]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/boxplot.png)
+
+<a id="feature-selection"></a>
 
 #### Feature Selection
 
@@ -300,13 +323,19 @@ Features are then selected based on their:
 1. Correlation with the target variable.
 2. Recursive Feature Elimination (RFE) using a Random Forest Regressor.
 
+<a id="visualization"></a>
+
 #### Visualization
 
 [![Visualise][visualization-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/visualization.png)
 
+<a id="decision"></a>
+
 #### Decision on Which Features to Keep
 
 Based on both the feature selection methods, `n` features will be selected.
+
+<a id="model-training-evaluation"></a>
 
 ### Model Training and Evaluation
 
@@ -320,6 +349,8 @@ Several models are trained and evaluated:
 The best model is selected based on Mean Squared Error (MSE) and R-squared (R2) metrics.
 
 [![Model Training and Evaluation][model_training_evaluation-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/model_training_evaluation.png)
+
+<a id="recommendation-engine"></a>
 
 ### Recommendation Engine
 
@@ -347,15 +378,15 @@ print(f"Recommended action: {decision} it now!")
 Recommended action: Sell it now!
 ```
 
+<a id="forecasting"></a>
+
 ### Forecasting
 
 The system can forecast the exchange rate for a specified number of future days using the best-performing model.
 
 [![Forecasting][forecasting-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Resources/demo.html)
 
-<p align="right">
-  <a href="#readme-top" style="color: lightgray;"><strong>Back to Top ⬆️</strong></a>
-</p>
+<p align="right"><a href="#readme-top"><strong>Back to Top ⬆️</strong></a></p>
 
 <a id="contributing"></a>
 
@@ -363,12 +394,22 @@ The system can forecast the exchange rate for a specified number of future days 
 
 Feel free to fork the project, make changes, and submit a pull request.
 
+<a id="contact"></a>
+
+## Contact
+
+* [![LinkedIn][LinkedIn-badge]][LinkedIn-url]
+* [![Gmail][Gmail-badge]][Gmail-url]
+* [![Upwork][Upwork-badge]][Upwork-url]
+
 <a id="acknowledgments"></a>
 
 ## Acknowledgments
 
 - The dataset used in this project is courtesy of Yahoo Finance.
 - This project is inspired by the challenges faced by currency traders in predicting exchange rates.
+
+<p align="right"><a href="#readme-top"><strong>Back to Top ⬆️</strong></a></p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -391,7 +432,7 @@ Feel free to fork the project, make changes, and submit a pull request.
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/hira-arif-31a45620b/
 
 [product-screenshot]: demo.html
 
@@ -460,3 +501,15 @@ Feel free to fork the project, make changes, and submit a pull request.
 [model_training_evaluation-screenshot]: Images/After/model_training_evaluation.png
 
 [forecasting-screenshot]: Images/After/candle_stick_chart.png
+
+[LinkedIn-badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+
+[LinkedIn-url]: https://linkedin.com/in/your-linkedin-username
+
+[Gmail-badge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+
+[Gmail-url]: mailto:hiraarif904@gmail.com
+
+[Upwork-badge]: https://img.shields.io/badge/Upwork-6FDA44?style=for-the-badge&logo=upwork&logoColor=white
+
+[Upwork-url]: https://www.upwork.com/freelancers/hiraa2
