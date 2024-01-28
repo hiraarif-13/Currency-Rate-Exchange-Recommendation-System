@@ -81,7 +81,13 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/demo.gif)
+<p align="center">
+<a href="https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/demo.gif">
+    <img src="Images/After/demo.gif" alt="Demo">
+  </a>
+</p>
+
+[//]: # ([![Product Name Screen Shot][product-screenshot]]&#40;https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Images/After/demo.gif&#41;)
 
 The Currency Exchange Rate Prediction System is a Python application designed to assist users in analyzing historical
 currency exchange rates. It predicts future rates and makes recommendations on buying or selling currencies.
