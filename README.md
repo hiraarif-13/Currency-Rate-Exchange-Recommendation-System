@@ -13,7 +13,7 @@
     <img src="Images/logo.png" alt="Logo" width="300" height="300">
   </a>
 
-<h2 align="center">Currency Exchange Rate Recommendation System</h3>
+<h2 align="center">Currency Exchange Rate Recommendation System</h2>
 
   <p align="center">
     A dynamic Currency Exchange Rate Recommendation System with predictive analytics to empower your trading decisions!

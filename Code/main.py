@@ -7,6 +7,13 @@ Original file is located at
     https://colab.research.google.com/drive/1nYGFvYBqhVpFT0lHva6IcUm6wkLW7B5x
 
 # Currecy Exchange Rate Recommendation System
+> A dynamic Currency Exchange Rate Recommendation System with predictive analytics to empower your trading decisions!
+
+## Author: Hira Arif
+### Contact:
+*   [Linkedin](https://www.linkedin.com/in/hira-arif-31a45620b/)
+*   [Gmail](mailto:hiraarif904@gmail.com)
+*   [Upwork](https://upwork.com/freelancers/hiraa2)
 
 # **Importing Libraries**
 """
@@ -564,3 +571,4 @@ fig.update_traces(hovertemplate='Date: %{x}<br>Value: %{y:.2f}')
 # Show the figure
 fig.show()
 
+fig.write_html("demo.html")
