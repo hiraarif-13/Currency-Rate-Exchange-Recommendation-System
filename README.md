@@ -21,7 +21,7 @@
     <a href="https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/tree/main/Documentations"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System">View Demo</a>
+    <a href="https://hiraarif-13.github.io/Currency-Rate-Exchange-Recommendation-System/Resources/demo.html">View Demo</a>
     ·
     <a href="https://github.com/hiraarif-13/Currency-Rate-Exchange-Recommendation-System/issues">Report Bug</a>
     ·
